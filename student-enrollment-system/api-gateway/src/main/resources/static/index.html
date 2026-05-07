@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enrollment Control Desk</title>
+    <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+    <main class="desk">
+        <header class="command-bar">
+            <div class="product-lockup">
+                <span class="system-code">ENSAH / SPRING-MS</span>
+                <h1>Enrollment Control Desk</h1>
+            </div>
+
+            <form id="student-form" class="lookup-form">
+                <label for="student-cnie">CNIE</label>
+                <div class="lookup-row">
+                    <input id="student-cnie" name="studentCnie" type="text" value="CD2387" maxlength="30" autocomplete="off">
+                    <button type="submit">Search</button>
+                </div>
+            </form>
+
+            <div class="gateway-pill">
+                <span class="pulse"></span>
+                <span>Gateway 8080</span>
+            </div>
+        </header>
+
+        <section class="student-strip" aria-label="Student dossier">
+            <div class="student-identity">
+                <div id="student-avatar" class="student-avatar">CD</div>
+                <div>
+                    <span class="label">Current student</span>
+                    <h2 id="student-name">CD2387</h2>
+                    <p id="student-email">Waiting for student lookup</p>
+                </div>
+            </div>
+
+            <div class="metric-board">
+                <div class="metric">
+                    <span>Courses</span>
+                    <strong id="metric-courses">0</strong>
+                </div>
+                <div class="metric">
+                    <span>Credits</span>
+                    <strong id="metric-credits">0</strong>
+                </div>
+                <div class="metric">
+                    <span>Cancelable</span>
+                    <strong id="metric-open">0</strong>
+                </div>
+                <div class="metric">
+                    <span>Locked</span>
+                    <strong id="metric-locked">0</strong>
+                </div>
+            </div>
+        </section>
+
+        <div id="system-message" class="system-message"></div>
+
+        <section class="workbench">
+            <section class="catalog-column" aria-labelledby="catalog-title">
+                <div class="section-head">
+                    <div>
+                        <span class="label">Course Service</span>
+                        <h3 id="catalog-title">Course capacity</h3>
+                    </div>
+                    <button id="refresh-courses" type="button" class="quiet-button">Refresh</button>
+                </div>
+                <div id="courses-list" class="course-stack"></div>
+            </section>
+
+            <section class="operations-column" aria-labelledby="ledger-title">
+                <form id="enrollment-form" class="enrollment-ticket">
+                    <div>
+                        <span class="label">Enrollment Service</span>
+                        <h3>New enrollment</h3>
+                    </div>
+                    <div class="ticket-controls">
+                        <select id="course-select" name="courseId"></select>
+                        <button type="submit">Enroll</button>
+                    </div>
+                    <p id="enroll-message" class="inline-message"></p>
+                </form>
+
+                <section class="ledger">
+                    <div class="section-head compact">
+                        <div>
+                            <span class="label">Enrollment DTO</span>
+                            <h3 id="ledger-title">Student ledger</h3>
+                        </div>
+                        <span id="enrollment-count" class="count-chip">0 records</span>
+                    </div>
+                    <div id="enrollments-table" class="ledger-list"></div>
+                </section>
+            </section>
+        </section>
+    </main>
+
+    <script src="/assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,593 @@
+:root {
+    --paper: #f6f7f4;
+    --paper-ink: #202725;
+    --muted: #69736f;
+    --line: #d7ddd8;
+    --line-strong: #b9c4bd;
+    --surface: #ffffff;
+    --deep: #18211f;
+    --deep-soft: #24302d;
+    --green: #0f7b63;
+    --green-dark: #0b604d;
+    --blue: #285d8f;
+    --amber: #b87818;
+    --red: #b43f3f;
+    --violet: #5c527f;
+    --shadow: 0 16px 36px rgba(24, 33, 31, 0.08);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background:
+        linear-gradient(90deg, rgba(24, 33, 31, 0.035) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(24, 33, 31, 0.035) 1px, transparent 1px),
+        var(--paper);
+    background-size: 28px 28px;
+    color: var(--paper-ink);
+    font-family: "Segoe UI", Arial, sans-serif;
+    letter-spacing: 0;
+}
+
+button,
+input,
+select {
+    font: inherit;
+}
+
+button {
+    min-height: 42px;
+    border: 0;
+    border-radius: 6px;
+    background: var(--green);
+    color: #fff;
+    cursor: pointer;
+    font-weight: 800;
+    padding: 0 18px;
+}
+
+button:hover {
+    background: var(--green-dark);
+}
+
+button:disabled {
+    background: #c8cec9;
+    color: #747d78;
+    cursor: not-allowed;
+}
+
+input,
+select {
+    width: 100%;
+    min-height: 42px;
+    border: 1px solid var(--line-strong);
+    border-radius: 6px;
+    background: #fff;
+    color: var(--paper-ink);
+    outline: none;
+    padding: 0 12px;
+}
+
+input:focus,
+select:focus {
+    border-color: var(--green);
+    box-shadow: 0 0 0 3px rgba(15, 123, 99, 0.14);
+}
+
+label,
+.label {
+    display: block;
+    color: var(--muted);
+    font-size: 0.73rem;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.desk {
+    width: min(1440px, 100%);
+    margin: 0 auto;
+    padding: 18px;
+}
+
+.command-bar {
+    display: grid;
+    grid-template-columns: minmax(260px, 1fr) minmax(360px, 520px) auto;
+    align-items: center;
+    gap: 18px;
+    min-height: 92px;
+    background: var(--deep);
+    color: #f7faf7;
+    border-radius: 10px;
+    padding: 18px;
+    box-shadow: var(--shadow);
+}
+
+.system-code {
+    display: inline-block;
+    color: #9bb7ad;
+    font-size: 0.76rem;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    margin-bottom: 6px;
+}
+
+.product-lockup h1 {
+    margin: 0;
+    font-size: 1.55rem;
+    line-height: 1.1;
+}
+
+.lookup-form {
+    display: grid;
+    gap: 8px;
+}
+
+.lookup-form label {
+    color: #b9c9c1;
+}
+
+.lookup-row,
+.ticket-controls {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 10px;
+}
+
+.gateway-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 999px;
+    padding: 9px 12px;
+    color: #dbe6df;
+    white-space: nowrap;
+}
+
+.pulse {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #73d193;
+    box-shadow: 0 0 0 5px rgba(115, 209, 147, 0.14);
+}
+
+.student-strip {
+    display: grid;
+    grid-template-columns: minmax(280px, 1fr) minmax(420px, 0.95fr);
+    gap: 18px;
+    margin: 18px 0;
+}
+
+.student-identity,
+.metric-board,
+.catalog-column,
+.operations-column,
+.enrollment-ticket,
+.ledger {
+    border: 1px solid var(--line);
+    background: rgba(255, 255, 255, 0.92);
+    box-shadow: var(--shadow);
+}
+
+.student-identity {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    border-radius: 10px;
+    padding: 18px;
+}
+
+.student-avatar {
+    display: grid;
+    place-items: center;
+    width: 72px;
+    height: 72px;
+    border-radius: 12px;
+    background: #f0c35a;
+    color: #1f2623;
+    font-size: 1.35rem;
+    font-weight: 900;
+}
+
+.student-identity h2 {
+    margin: 4px 0;
+    font-size: 1.4rem;
+}
+
+.student-identity p {
+    margin: 0;
+    color: var(--muted);
+}
+
+.metric-board {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.metric {
+    min-height: 106px;
+    border-right: 1px solid var(--line);
+    padding: 18px;
+}
+
+.metric:last-child {
+    border-right: 0;
+}
+
+.metric span {
+    display: block;
+    color: var(--muted);
+    font-size: 0.78rem;
+    font-weight: 800;
+}
+
+.metric strong {
+    display: block;
+    margin-top: 10px;
+    font-size: 2rem;
+    line-height: 1;
+}
+
+.system-message {
+    min-height: 34px;
+    color: var(--muted);
+    font-size: 0.92rem;
+}
+
+.system-message.success {
+    color: var(--green);
+}
+
+.system-message.error,
+.inline-message.error {
+    color: var(--red);
+}
+
+.workbench {
+    display: grid;
+    grid-template-columns: minmax(360px, 0.95fr) minmax(460px, 1.35fr);
+    gap: 18px;
+    align-items: start;
+}
+
+.catalog-column,
+.operations-column {
+    border-radius: 10px;
+    padding: 18px;
+}
+
+.operations-column {
+    display: grid;
+    gap: 18px;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+}
+
+.section-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.section-head h3,
+.enrollment-ticket h3 {
+    margin: 3px 0 0;
+    font-size: 1.1rem;
+}
+
+.section-head.compact {
+    margin: 0;
+    padding: 18px 18px 12px;
+}
+
+.quiet-button {
+    min-height: 34px;
+    border: 1px solid var(--line);
+    background: #f4f7f5;
+    color: var(--paper-ink);
+    padding: 0 12px;
+}
+
+.quiet-button:hover {
+    background: #e7ede9;
+}
+
+.course-stack {
+    display: grid;
+    gap: 10px;
+}
+
+.course-card {
+    display: grid;
+    grid-template-columns: 62px minmax(0, 1fr);
+    gap: 14px;
+    border: 1px solid var(--line);
+    border-left: 5px solid var(--blue);
+    border-radius: 8px;
+    background: #fff;
+    padding: 14px;
+    cursor: pointer;
+}
+
+.course-card:hover,
+.course-card.selected {
+    border-color: var(--green);
+    border-left-color: var(--green);
+    box-shadow: 0 10px 26px rgba(15, 123, 99, 0.10);
+}
+
+.course-code {
+    display: grid;
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    background: #edf2f8;
+    color: var(--blue);
+    font-weight: 900;
+}
+
+.course-main {
+    min-width: 0;
+}
+
+.course-title-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.course-title-row h4 {
+    margin: 0;
+    font-size: 0.98rem;
+}
+
+.course-card p {
+    margin: 6px 0 12px;
+    color: var(--muted);
+    font-size: 0.88rem;
+    line-height: 1.45;
+}
+
+.credit-chip,
+.count-chip,
+.seat-chip,
+.status {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 999px;
+    font-size: 0.74rem;
+    font-weight: 900;
+    white-space: nowrap;
+}
+
+.credit-chip {
+    background: #f6eddb;
+    color: var(--amber);
+    padding: 5px 9px;
+}
+
+.count-chip {
+    background: #eef2f7;
+    color: var(--blue);
+    padding: 7px 10px;
+}
+
+.seat-chip {
+    background: #edf7f3;
+    color: var(--green);
+    padding: 5px 9px;
+}
+
+.seat-chip.full {
+    background: #f7e7e7;
+    color: var(--red);
+}
+
+.capacity-track {
+    height: 7px;
+    border-radius: 999px;
+    background: #e8ece9;
+    overflow: hidden;
+}
+
+.capacity-fill {
+    height: 100%;
+    width: 0;
+    border-radius: inherit;
+    background: var(--green);
+}
+
+.capacity-fill.warning {
+    background: var(--amber);
+}
+
+.capacity-fill.full {
+    background: var(--red);
+}
+
+.capacity-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 7px;
+    color: var(--muted);
+    font-size: 0.78rem;
+    font-weight: 700;
+}
+
+.enrollment-ticket {
+    display: grid;
+    grid-template-columns: minmax(160px, 0.6fr) minmax(260px, 1fr);
+    gap: 16px;
+    border-radius: 10px;
+    padding: 18px;
+}
+
+.inline-message {
+    grid-column: 2;
+    min-height: 18px;
+    margin: 0;
+    color: var(--green);
+    font-size: 0.88rem;
+}
+
+.ledger {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.ledger-list {
+    display: grid;
+}
+
+.ledger-row {
+    position: relative;
+    display: grid;
+    grid-template-columns: 34px minmax(0, 1fr) auto;
+    gap: 14px;
+    border-top: 1px solid var(--line);
+    padding: 16px 18px;
+}
+
+.ledger-row::before {
+    content: "";
+    position: absolute;
+    left: 34px;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: var(--line);
+}
+
+.ledger-pin {
+    position: relative;
+    z-index: 1;
+    width: 14px;
+    height: 14px;
+    border: 3px solid var(--surface);
+    border-radius: 50%;
+    background: var(--green);
+    box-shadow: 0 0 0 1px var(--green);
+    margin-top: 4px;
+}
+
+.ledger-pin.locked {
+    background: var(--amber);
+    box-shadow: 0 0 0 1px var(--amber);
+}
+
+.ledger-main h4 {
+    margin: 0 0 6px;
+    font-size: 1rem;
+}
+
+.ledger-main p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.88rem;
+}
+
+.ledger-actions {
+    display: grid;
+    justify-items: end;
+    gap: 8px;
+}
+
+.status {
+    padding: 5px 9px;
+}
+
+.status.open {
+    background: #e7f5ec;
+    color: var(--green);
+}
+
+.status.locked {
+    background: #f7eddf;
+    color: var(--amber);
+}
+
+.danger-button {
+    min-height: 34px;
+    border: 1px solid #e7c7c7;
+    background: #fbefef;
+    color: var(--red);
+    padding: 0 12px;
+}
+
+.danger-button:hover {
+    background: #f3dddd;
+}
+
+.empty-state {
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    padding: 28px 18px;
+}
+
+@media (max-width: 1080px) {
+    .command-bar,
+    .student-strip,
+    .workbench,
+    .enrollment-ticket {
+        grid-template-columns: 1fr;
+    }
+
+    .gateway-pill {
+        width: fit-content;
+    }
+
+    .inline-message {
+        grid-column: auto;
+    }
+}
+
+@media (max-width: 720px) {
+    .desk {
+        padding: 10px;
+    }
+
+    .metric-board {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .metric:nth-child(2) {
+        border-right: 0;
+    }
+
+    .metric:nth-child(1),
+    .metric:nth-child(2) {
+        border-bottom: 1px solid var(--line);
+    }
+
+    .lookup-row,
+    .ticket-controls,
+    .course-card,
+    .ledger-row {
+        grid-template-columns: 1fr;
+    }
+
+    .ledger-row::before {
+        display: none;
+    }
+
+    .ledger-actions {
+        justify-items: stretch;
+    }
+}
